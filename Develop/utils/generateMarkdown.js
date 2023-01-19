@@ -2,7 +2,8 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   const licenseBadge = {
-    "Academic Free License v3.0": "![Academic Free v3.0](https://img.shields.io/badge/License-Academic_Free_v3.0-purple?style=for-the-badge)" , 
+    Academic: "![Academic Free v3.0](https://img.shields.io/badge/License-Academic_Free_v3.0-purple?style=for-the-badge)" , 
+    // Academic Free License v3.0: "![Academic Free v3.0](https://img.shields.io/badge/License-Academic_Free_v3.0-purple?style=for-the-badge)" , 
     "Apache license 2.0":"![Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-purple?style=for-the-badge)" , 
     "Artistic license 2.0":"![Artistic 2.0](https://img.shields.io/badge/License-Artistic_2.0-purple?style=for-the-badge)", 
     "Boost Software License 1.0":"![Boost Software 1.0](https://img.shields.io/badge/License-boost_software_1.0-purple?style=for-the-badge)",
@@ -35,7 +36,9 @@ function renderLicenseBadge(license) {
     return "";
   }else{
     //FIXME: Make this match the license to the licenseBadge variable.
-    return `![License](https://img.shields.io/badge/license-${license}-blue.svg)`;
+    // const match = license.match(licenseBadge)
+    // const {license} = licenseBadge;
+    return ${license.};
   }
 };
 
