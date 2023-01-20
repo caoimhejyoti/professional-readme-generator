@@ -36,6 +36,11 @@ const questions = [
         'BSD 2-clause "Simplified" license',
         'BSD 3-clause "New" or "Revised" license',
         'Common Development and Distribution License 1.0',
+        'Eclipse Public License 2.0',
+        'GNU General Public License v2.0',
+        'GNU General Public License v3.0',
+        'MIT',
+        'Mozilla Public License 2.0'
     ]
     },
     // choices: [
