@@ -1,6 +1,6 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// DESCRIPTION: Function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
+function renderLicenseBadgeFnc(license) {
   if (!license){
     return "";
   }else{
@@ -8,9 +8,9 @@ function renderLicenseBadge(license) {
   }
 };
 
-// TODO: Create a function that returns the license link
+// FIXME: open source URL needs updating. DESCRIPTION: Function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
+function renderLicenseLinkFnc(license) {
   if (!license) {
     return "";
   }else{
@@ -19,9 +19,9 @@ function renderLicenseLink(license) {
   }
 };
 
-// TODO: Create a function that returns the license section of README
+// FIXME: Confirm Lisence name is working correctly. DESCRIPTION: Function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseSectionFnc(license) {
   if (!license) {
     return "";
   }else{
@@ -29,15 +29,16 @@ function renderLicenseSection(license) {
   }
 };
 
-// TODO: Create a function to generate markdown for README
+// FIXME: Confirm hyperlinks in contents work. Email badge is just GMAIL currently. DESCRIPTION: Function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
-  ${renderLicenseBadge(data.license)}
+  ${renderLicenseBadgeFnc(data.license)}
 
   ## Description
   ${data.description}
 
+  FIXME: Confirm hyperlinks in contents work.
   ## Table of Contents
   [Installation](#Installation)
   [Usage](#Usage)
@@ -53,8 +54,8 @@ function generateMarkdown(data) {
   ${data.usage}
   
   ## License
-  ${renderLicenseSection(data.license)}
-  ${renderLicenseLink(data.license)}
+  ${renderLicenseSectionFnc(data.license)}
+  ${renderLicenseLinkFnc(data.license)}
   
   ## Contribution 
   ${data.contributing}
@@ -65,10 +66,12 @@ function generateMarkdown(data) {
   ## Questions
   If you have any further questions, please contact me via email or github.
 
+  //FIXME: this is currently only gmail badge - not inclusive. 
   <a href="mailto:${data.email}"><img alt="Link to email contact address" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>  <a href="https://github.com/${data.username}"><img alt="badge for GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" target="_blank" /></a>
   
 
   `;
 };
 
+// DESCRIPTION: exporting functions for use within index.js
 module.exports = generateMarkdown;
