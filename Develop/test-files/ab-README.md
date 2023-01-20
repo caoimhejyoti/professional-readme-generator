@@ -18,7 +18,8 @@ FIXME: Confirm hyperlinks in contents work.
 [Return to top](#ab)
 ab
 
-## Usage [:arrow_up:](#ab)
+## Usage 
+[:arrow_up:](#ab)
 ab
 
 ## License [:arrow_up:](#ab)
