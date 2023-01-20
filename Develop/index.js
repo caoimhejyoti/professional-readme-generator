@@ -5,7 +5,7 @@ const fs = require('fs');
 //DESCRIPTION: links to generateMarkdown js file for exported packages.
 const generateMarkdown = require(`./utils/generateMarkdown.js`);
 
-// DESCRIPTION: Array of questions for user input
+// FIXME: add styling. DESCRIPTION: Array of questions for user input
 const questions = [
     //DESCRIPTION: Generates contents for README title
     {name: "title",
