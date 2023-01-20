@@ -32,6 +32,15 @@ function renderLicenseBadgeFnc(license) {
   return badge;
 }
 
+
+function renderGitRepositoryBadgeFnc (username) {
+  if (!username) {
+    return "";
+  }else{
+    return `[![GitHub username](https://img.shields.io/badge/username-${username}-green?style=for-the-badge)](https://github.com/${username})`
+  }
+}
+
 // DESCRIPTION: Function that returns the license link based on user license choice.
 function renderLicenseLinkFnc(license) {
   switch (license) {
@@ -81,7 +90,7 @@ function renderLicenseSectionFnc(license) {
 function generateMarkdown(data) {
 return `
 # ${data.title}
-${renderLicenseBadgeFnc(data.license)}
+${renderLicenseBadgeFnc(data.license)}  ${renderGitRepositoryBadgeFnc(data.username)}
 
 ## Description
 ${data.description}
@@ -98,27 +107,27 @@ FIXME: Confirm hyperlinks in contents work - check with Jasmine/Marco regarding 
 ## Installation   
 ${data.installation}
 
-[Return to top](#${data.title})
+[Return to top](# ${data.title})
 
 ## Usage 
 ${data.usage}
 
-[Return to top](#${data.title})
+[Return to top](# ${data.title})
 
 ## License
 ${renderLicenseSectionFnc(data.license)}
 
-[Return to top](#${data.title})
+[Return to top](# ${data.title})
 
 ## Contribution 
 ${data.contributing}
 
-[Return to top](#${data.title})
+[Return to top](# ${data.title})
 
 ## Tests
 ${data.tests}
 
-[Return to top](#${data.title})
+[Return to top](# ${data.title})
 
 ## Questions 
 If you have any further questions, please contact me via email or github.
@@ -126,7 +135,7 @@ If you have any further questions, please contact me via email or github.
 <a href="mailto:${data.email}"><img alt="Link to email contact address" src="https://img.shields.io/badge/email-D14836?style=for-the-badge" target="_blank" /></a>  <a href="https://github.com/${data.username}"><img alt="badge for GitHub" src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" target="_blank" /></a>
 
 
-[Return to top](#${data.title})`;
+[Return to top](# ${data.title})`;
 };
 
 // DESCRIPTION: exporting functions for use within index.js
