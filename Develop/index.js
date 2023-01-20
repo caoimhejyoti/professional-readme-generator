@@ -1,25 +1,33 @@
-// TODO: Include packages needed for this application
+// DESCRIPTION: node packages used within application.
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+//DESCRIPTION: links to generateMarkdown js file for exported packages.
 const generateMarkdown = require(`./utils/generateMarkdown.js`);
-// TODO: Create an array of questions for user input
+
+// DESCRIPTION: Array of questions for user input
 const questions = [
+    //DESCRIPTION: Generates contents for README title
     {name: "title",
     type: "input",
     message: "What is the Title of this project?",
     },
+    //DESCRIPTION: Generates contents for README description
     {name: "description",
     type: "input",
     message: "Describe the project?",
     },
+    //DESCRIPTION: Generates contents for README installation instructions
     {name: "installation",
     type: "input",
     message: "What are the installation instructions?",
     },
+    //DESCRIPTION: Generates contents for README usage instructions
     {name: "usage",
     type: "input",
     message: "Do you have any usage information?",
     },
+    //DESCRIPTION: Generates README liscense badge
     {name: "license",
     type: "list",
     message: "Select your lisence type?",
@@ -137,42 +145,42 @@ const questions = [
             value:"![zLib License](https://img.shields.io/badge/License-zLib-purple?style=for-the-badge)"
         }
     ]},
+    //DESCRIPTION: Generates contents for README contribution instructions
     {name: "contributing",
     type: "input",
     message: "What are the contributing guidelines for this project?",
     },
+    //DESCRIPTION: Generates contents for README testing instructions
     {name: "tests",
     type: "input",
     message: "Please provide any test instructions?",
     },
-    // DESCRIPTION: this information will create a link to the users github profile within questions
+    //DESCRIPTION: Generates README github badge with link to users profile
     {name: "username",
     type: "input",
     message: "What is your GitHub username?",
     },
-    // DESCRIPTION: this information will create a link to the users email address within questions
+    //DESCRIPTION: Generates README email badge with link to create a new email to creator.
     {name: "email",
     type: "input",
     message: "What is your email address?",
     },
 ];
 
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-function writeToFile() {
+// DESCRIPTION: function to write README file
+function writeToFileFnc() {
     inquirer
         .prompt(questions)
             .then ((data) => {
                 fs.appendFile(`${data.title}-README.md`, generateMarkdown(data), (err) =>
-                err ? console.error(err) : console.log('ReadMe appended!')
-                )
+                err ? console.error(err) : console.log('ReadMe appended!'))
             });
 };
-// // TODO: Create a function to initialize app
-function init() {
-    writeToFile();
+
+//DESCRIPTION: Function to initialize app
+function initFnc() {
+    writeToFileFnc();
 }
 
-// // Function call to initialize app
-init();
+//DESCRIPTION: Function call to initialize app
+initFnc();
