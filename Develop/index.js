@@ -1,12 +1,40 @@
 // DESCRIPTION: node packages used within application.
 const inquirer = require('inquirer');
+const axios = require('axios');
 const fs = require('fs');
+const outputCyanText = (text) => console.log(`\x1b[36m${text}\x1b[0m`);
 
 //DESCRIPTION: links to generateMarkdown js file for exported packages.
 const generateMarkdown = require(`./utils/generateMarkdown.js`);
 
-// FIXME: add styling. confirm number of licenses required. DESCRIPTION: Array of questions for user input
+// FIXME: error loop in repo q. add styling. confirm number of licenses required. DESCRIPTION: Array of questions for user input
 const questions = [
+    //DESCRIPTION: Generates README github badge with link to users profile - and confirms it is accurate.
+    {name: "username",
+    type: "input",
+    message: "What is your GitHub username?",
+    validate: function (value) {
+        return axios.get(`https://api.github.com/users/${value}`)
+            .then (data => {
+                return true;
+            })
+            .catch (err => {
+                return (`Please enter a valid GitHub username`);
+            });
+    }},
+    //FIXME:resulting error only.  DESCRIPTION: Generates README github badge with link to users profile - and confirms it is accurate.
+    // {name: "repo",
+    // type: "input",
+    // message: "What is the name of this GitHub repository?",
+    // validate: function (value, answers) {
+    //     return axios.get(`https://api.github.com/users/${answers.username}/${value}`)
+    //         .then (data => {
+    //             return true;
+    //         })
+    //         .catch (err => {
+    //             return (`Please enter a valid GitHub repository`);
+    //         });
+    // }},
     //DESCRIPTION: Generates contents for README title
     {name: "title",
     type: "input",
@@ -41,7 +69,8 @@ const questions = [
         'GNU General Public License v3.0',
         'MIT',
         'Mozilla Public License 2.0'
-    ]
+    ],
+    default: 'MIT'
     },
     // choices: [
     //     // {
@@ -174,11 +203,6 @@ const questions = [
     type: "input",
     message: "Please provide any test instructions?",
     },
-    //DESCRIPTION: Generates README github badge with link to users profile
-    {name: "username",
-    type: "input",
-    message: "What is your GitHub username?",
-    },
     //DESCRIPTION: Generates README email badge with link to create a new email to creator.
     {name: "email",
     type: "input",
@@ -189,10 +213,10 @@ const questions = [
 // DESCRIPTION: function to write README file
 function writeToFileFnc() {
     inquirer
-        .prompt(questions)
+        .prompt (questions)
             .then ((data) => {
-                fs.appendFile(`${data.title}-README.md`, generateMarkdown(data), (err) =>
-                err ? console.error(err) : console.log('ReadMe appended!'))
+                fs.writeFile(`${data.title}-README.md`, generateMarkdown(data), (err) =>
+                err ? console.error(err) : console.log('ReadMe created!'))
             });
 };
 
