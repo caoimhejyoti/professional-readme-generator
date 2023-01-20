@@ -31,11 +31,11 @@ const questions = [
     choices: [
         {
             name:"Academic Free License v3.0",
-            licenseBadge: "![Academic Free v3.0](https://img.shields.io/badge/License-Academic_Free_v3.0-purple?style=for-the-badge)"
+            value: "![Academic Free v3.0](https://img.shields.io/badge/License-Academic_Free_v3.0-purple?style=for-the-badge)"
         }, 
         {
             name:"Apache license 2.0",
-            licenseBadge: "![Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-purple?style=for-the-badge)"
+            value: "![Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-purple?style=for-the-badge)"
         } 
     ]
     // "Apache license 2.0", 
