@@ -38,7 +38,7 @@ function renderLicenseBadge(license) {
     //FIXME: Make this match the license to the licenseBadge variable.
     // const match = license.match(licenseBadge)
     // const {license} = licenseBadge;
-    return `${license.licenseBadge}`;
+    return `${license}`;
   }
 };
 
