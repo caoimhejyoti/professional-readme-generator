@@ -1,3 +1,9 @@
+// TODO:
+  // remove all highlighted notes
+  // look at functions for all readme sections os it there is no answer, it is not created.  
+  // styling in CL
+
+
 // DESCRIPTION: Function that returns a license badge based on user license choice.
 function renderLicenseBadgeFnc(license) {
   switch (license) {
@@ -32,7 +38,7 @@ function renderLicenseBadgeFnc(license) {
   return badge;
 }
 
-
+// FIXME: currently creating username not repo badge DESCRIPTION: Function to create badge of the project repo with link.
 function renderGitRepositoryBadgeFnc (username) {
   if (!username) {
     return "";
@@ -92,10 +98,13 @@ return `
 # ${data.title}
 ${renderLicenseBadgeFnc(data.license)}  ${renderGitRepositoryBadgeFnc(data.username)}
 
+FIXME: add a second description - so a headline and then a bigger description
 ## Description
 ${data.description}
 
-FIXME: Confirm hyperlinks in contents work - check with Jasmine/Marco regarding links. working in md file not preview?
+FIXME: remove any spaces from project title. Confirm hyperlinks in contents work - check with Jasmine/Marco regarding links. working in md file not preview?
+
+FIXME: look at how to style table of contents in an interactive and interesting way. 
 ## Table of Contents
 [Installation](##Installation)
 [Usage](##Usage)
@@ -107,6 +116,7 @@ FIXME: Confirm hyperlinks in contents work - check with Jasmine/Marco regarding 
 ## Installation   
 ${data.installation}
 
+FIXME: buggy - remove any spaces from project title.
 [Return to top](# ${data.title})
 
 ## Usage 
@@ -119,6 +129,7 @@ ${renderLicenseSectionFnc(data.license)}
 
 [Return to top](# ${data.title})
 
+FIXME: do you want to add default text?
 ## Contribution 
 ${data.contributing}
 
