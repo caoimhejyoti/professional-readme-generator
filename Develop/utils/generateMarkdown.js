@@ -44,7 +44,6 @@ function renderGitUsernameBadgeFnc (username) {
   }
 }
 
-
 // DESCRIPTION: Function that returns the license link based on user license choice.
 function renderLicenseLinkFnc(license) {
   switch (license) {
