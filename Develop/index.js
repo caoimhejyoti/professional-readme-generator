@@ -41,9 +41,14 @@ const questions = [
     message: "What is the Title of this project?",
     },
     //DESCRIPTION: Generates contents for README description
+    {name: "tagline",
+    type: "input",
+    message: "Provide a tag line for your project."
+    },
+    //DESCRIPTION: Generates contents for README description
     {name: "description",
     type: "input",
-    message: "Describe the project?",
+    message: "Describe the project in detail?",
     },
     //DESCRIPTION: Generates contents for README installation instructions
     {name: "installation",

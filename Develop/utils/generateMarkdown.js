@@ -95,23 +95,34 @@ function renderLicenseSectionFnc(license) {
 // FIXME: Confirm hyperlinks in contents work. DESCRIPTION: Function to generate markdown for README
 function generateMarkdown(data) {
 return `
-# ${data.title}
-${renderLicenseBadgeFnc(data.license)}  ${renderGitRepositoryBadgeFnc(data.username)}
+<h1 align="centre">
+  <br>
+  # ${data.title}
+</h1>
 
-FIXME: add a second description - so a headline and then a bigger description
-## Description
-${data.description}
+<h4 align="centre">${data.tagline}</h4>
+
+<p align="centre">
+
+${renderLicenseBadgeFnc(data.license)}
+${renderGitRepositoryBadgeFnc(data.username)}
+</p>
+
+<p align="centre">
+  <a href="#about">About</a> *
+  <a href="#installation">Installation</a> *
+  <a href="#usage">Usage</a> *
+  <a href="#license">License</a> *
+  <a href="#contribution">Contribution</a> *
+  <a href="#tests">Tests</a> *
+  <a href="#questions">Questions</a> 
+</p>
 
 FIXME: remove any spaces from project title. Confirm hyperlinks in contents work - check with Jasmine/Marco regarding links. working in md file not preview?
 
-FIXME: look at how to style table of contents in an interactive and interesting way. 
-## Table of Contents
-[Installation](##Installation)
-[Usage](##Usage)
-[License](##License)
-[Contribution](##Contribution)
-[Tests](##Tests)
-[Questions](##Questions)
+## About
+${data.description}
+
 
 ## Installation   
 ${data.installation}
@@ -129,7 +140,6 @@ ${renderLicenseSectionFnc(data.license)}
 
 [Return to top](# ${data.title})
 
-FIXME: do you want to add default text?
 ## Contribution 
 ${data.contributing}
 
@@ -151,3 +161,14 @@ If you have any further questions, please contact me via email or github.
 
 // DESCRIPTION: exporting functions for use within index.js
 module.exports = generateMarkdown;
+
+
+// FIXME: look at how to style table of contents in an interactive and interesting way. 
+// ## Table of Contents
+// [About] (##About)
+// [Installation](##Installation)
+// [Usage](##Usage)
+// [License](##License)
+// [Contribution](##Contribution)
+// [Tests](##Tests)
+// [Questions](##Questions)
