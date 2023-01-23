@@ -1,7 +1,3 @@
-// TODO:
-  // remove all highlighted notes
-  // look at functions for all readme sections os it there is no answer, it is not created.  
-
 // DESCRIPTION: Function that returns a license badge based on user license choice.
 function renderLicenseBadgeFnc(license) {
   switch (license) {
@@ -33,21 +29,20 @@ function renderLicenseBadgeFnc(license) {
       badge = `[![Mozilla Public License 2.0](https://img.shields.io/badge/License-Mozilla_Public_2.0-brightgreen?style=for-the-badge)](https://opensource.org/licenses/MPL-2.0)`;
       break;      
     case 'No License':
-      badge = `![No License](https://img.shields.io/badge/License-Unlicensed-purple?style=for-the-badge)`;
+      badge = "";
       break;      
   }
   return badge;
 }
 
-//DESCRIPTION: Function to create badge of the project repo with link.
-function renderGitRepositoryBadgeFnc (username) {
+//DESCRIPTION: Function to create badge of the creators profile with link.
+function renderGitUsernameBadgeFnc (username) {
   if (!username) {
     return "";
   }else{
     return `[![GitHub username](https://img.shields.io/badge/username-${username}-green?style=for-the-badge)](https://github.com/${username})`
   }
 }
-
 
 
 // DESCRIPTION: Function that returns the license link based on user license choice.
@@ -84,16 +79,64 @@ function renderLicenseLinkFnc(license) {
   return link;
 }
 
-
-//DESCRIPTION: Function that returns the license section of README
-// If there is no license, return an empty string
+// DESCRIPTION: Function that returns the license section of README
 function renderLicenseSectionFnc(license) {
-  if (!license) {
+  if (license === "No License") {
     return "";
   }else{
     return `This project is using the following license:\n\n**${license}**\n\nFor further information regarding the license, please follow the link below:\n ${renderLicenseLinkFnc(license)}`;
   }
 };
+
+//DESCRIPTION: Function generate about section.
+function renderAboutSectionFnc (about) {
+  if (!about) {
+    return "";
+  }else{
+    return `## About 
+    ${about}`
+  }
+}
+
+//DESCRIPTION: Function generate installation section.
+function renderInstallationSectionFnc (installation) {
+  if (!installation) {
+    return "";
+  }else{
+    return `## Installation
+    ${installation}`
+  }
+}
+
+//DESCRIPTION: Function generate usage section.
+function renderUsageSectionFnc (usage) {
+  if (!usage) {
+    return "";
+  }else{
+    return `## Usage
+    ${usage}`
+  }
+}
+
+//DESCRIPTION: Function generate contribution section.
+function renderContributionSectionFnc (contribution) {
+  if (!contribution) {
+    return "";
+  }else{
+    return `## Contributions
+    ${contribution}`
+  }
+}
+
+//DESCRIPTION: Function generate tests section.
+function renderTestsSectionFnc (tests) {
+  if (!tests) {
+    return "";
+  }else{
+    return `## Tests
+    ${tests}`
+  }
+}
 
 // DESCRIPTION: Function to generate markdown for README
 function generateMarkdown(data) {
@@ -107,37 +150,39 @@ return `
 
 <p align="centre">
 
-${renderLicenseBadgeFnc(data.license)}  ${renderGitRepositoryBadgeFnc(data.username)}
+${renderLicenseBadgeFnc(data.license)}  ${renderGitUsernameBadgeFnc(data.username)}
 </p>
 
 <p align="centre">
   <a href="#about">About</a> ✦
   <a href="#installation">Installation</a> ✦
   <a href="#usage">Usage</a> ✦
-  <a href="#license">License</a> ✦
   <a href="#contribution">Contribution</a> ✦
   <a href="#tests">Tests</a> ✦
+  <a href="#license">License</a> ✦
   <a href="#questions">Questions</a> 
 </p>
 
+----------------------------------------------------------------
 ## About
-${data.description}
+${renderAboutSectionFnc(data.about)} 
 
+## Installation
+${renderInstallationSectionFnc(data.installation)} 
 
-## Installation   
-${data.installation}
+## Usage
+${renderUsageSectionFnc(data.usage)} 
 
-## Usage 
-${data.usage}
+## Contribution
+${renderContributionSectionFnc(data.contributing)} 
+
+## Tests
+${renderTestsSectionFnc(data.tests)} 
 
 ## License
 ${renderLicenseSectionFnc(data.license)}
 
-## Contribution 
-${data.contributing}
-
-## Tests
-${data.tests}
+----------------------------------------------------------------
 
 ## Questions 
 If you have any further questions, please contact via email or github.
