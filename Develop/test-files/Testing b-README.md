@@ -12,7 +12,7 @@
 </p>
 
 <p align="centre">
-  <a href="#about">About</a> *
+  <a href="#about">About</a> 
   <a href="#installation">Installation</a> *
   <a href="#usage">Usage</a> *
   <a href="#license">License</a> *
