@@ -2,7 +2,6 @@
 const inquirer = require('inquirer');
 const axios = require('axios');
 const fs = require('fs');
-const outputCyanText = (text) => console.log(`\x1b[36m${text}\x1b[0m`);
 
 //DESCRIPTION: links to generateMarkdown js file for exported packages.
 const generateMarkdown = require(`./utils/generateMarkdown.js`);
@@ -79,7 +78,15 @@ const questions = [
     {name: "email",
     type: "input",
     message: "What is your email address?",
-    },
+    validate: function (userInput) {
+                const symbols = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (symbols.test(String(userInput).toLowerCase())) {
+                    return true
+                } else {
+                    return ('Please enter a valid email!');
+                };
+            },
+    }
 ];
 
 // DESCRIPTION: function to write README file
