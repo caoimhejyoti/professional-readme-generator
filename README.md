@@ -27,9 +27,25 @@ FIXME: Create and attach video walk through!
 
 ## Future Developments
 1. Look at making the table of contents populate based on user input.
+2. Develop styling to include colours within the CLI
 
 ## Resources:
 https://www.digitalocean.com/community/tutorials/nodejs-interactive-command-line-prompts
+
 https://github.com/matiassingers/awesome-readme
+
 https://www.npmjs.com/package/axios
+
 https://www.npmjs.com/package/inquirer
+
+https://github.com/alexandresanlim/Badges4-README.md-Profile#welcome-badges-4-readmemd-profile
+
+https://www.markdownguide.org/cheat-sheet/
+
+https://javascript.plainenglish.io/how-to-inquirer-js-c10a4e05ef1f
+
+https://docs.github.com/en/rest/users/users?apiVersion=2022-11-28
+
+https://github.com/gofiber/fiber#readme
+
+https://opensource.org/licenses
