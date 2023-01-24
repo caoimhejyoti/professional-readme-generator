@@ -6,12 +6,12 @@
   d
 
   ## Table of Contents
-  [Installation](#Installation)
-  [Usage](#Usage)
+  [Installation](#installation)
+  [Usage](#usage)
   [License](#License)
   [Contribution](#Contribution)
   [Tests](#Tests)
-  [Questions](#Questions)
+  [Questions](#questions)
 
   ## Installation
   d
