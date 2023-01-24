@@ -16,13 +16,20 @@ With this project I was interesting in developing the following skills:
 6. Working across multiple JavaScript files.
 
 ## Installation
-This program is invoked from the command line by using the code below:
+This program opporates from your command line interface(CLI). First navigate to the application directory. Then run the following commands:
 
 ```bash
-node index.js
+npm init
+npm install inquirer@8.2.4
 ```
 
 ## Usage
+Once fully installed, this program is invoked with the following command:
+```bash
+node index.js
+```
+To see this program in opperation, watch our live demo!
+
 FIXME: Create and attach video walk through!
 
 ## Future Developments
