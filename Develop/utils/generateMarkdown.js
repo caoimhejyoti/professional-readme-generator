@@ -141,9 +141,9 @@ return `
 
 ${renderLicenseBadgeFnc(data.license)}  ${renderGitUsernameBadgeFnc(data.username)}
 
-
+----------------------------------------------------------------
+## Contents
 [About](#about)  ✦  [Installation](#installation)  ✦  [Usage](#usage)  ✦  [Contribution](#contribution)  ✦  [Tests](#tests)  ✦  [License](#license)  ✦  [Questions](#questions)
-
 ----------------------------------------------------------------
 ## About
 ${renderAboutSectionFnc(data.description)} 
