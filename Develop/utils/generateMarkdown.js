@@ -40,7 +40,7 @@ function renderGitUsernameBadgeFnc (username) {
   if (!username) {
     return "";
   }else{
-    return `[![GitHub username](https://img.shields.io/badge/username-${username}-green?style=for-the-badge)](https://github.com/${username})`
+    return `[![GitHub username](https://img.shields.io/badge/GitHub_Username-${username}-green?style=for-the-badge)](https://github.com/${username})`
   }
 }
 
@@ -88,12 +88,11 @@ function renderLicenseSectionFnc(license) {
 };
 
 //DESCRIPTION: Function generate about section.
-function renderAboutSectionFnc (about) {
-  if (!about) {
+function renderAboutSectionFnc (description) {
+  if (!description) {
     return "";
   }else{
-    return `## About 
-    ${about}`
+    return `${description}`
   }
 }
 
@@ -102,8 +101,7 @@ function renderInstallationSectionFnc (installation) {
   if (!installation) {
     return "";
   }else{
-    return `## Installation
-    ${installation}`
+    return `${installation}`
   }
 }
 
@@ -112,8 +110,7 @@ function renderUsageSectionFnc (usage) {
   if (!usage) {
     return "";
   }else{
-    return `## Usage
-    ${usage}`
+    return `${usage}`
   }
 }
 
@@ -122,8 +119,7 @@ function renderContributionSectionFnc (contribution) {
   if (!contribution) {
     return "";
   }else{
-    return `## Contributions
-    ${contribution}`
+    return `${contribution}`
   }
 }
 
@@ -132,39 +128,25 @@ function renderTestsSectionFnc (tests) {
   if (!tests) {
     return "";
   }else{
-    return `## Tests
-    ${tests}`
+    return `${tests}`
   }
 }
 
 // DESCRIPTION: Function to generate markdown for README
 function generateMarkdown(data) {
 return `
-<h1 align="centre">
-  <br>
-  ${data.title}
-</h1>
+# ${data.title}
 
-<h4 align="centre">${data.tagline}</h4>
-
-<p align="centre">
+### ${data.tagline}
 
 ${renderLicenseBadgeFnc(data.license)}  ${renderGitUsernameBadgeFnc(data.username)}
-</p>
 
-<p align="centre">
-  <a href="#about">About</a> ✦
-  <a href="#installation">Installation</a> ✦
-  <a href="#usage">Usage</a> ✦
-  <a href="#contribution">Contribution</a> ✦
-  <a href="#tests">Tests</a> ✦
-  <a href="#license">License</a> ✦
-  <a href="#questions">Questions</a> 
-</p>
+
+[About](#about)  ✦  [Installation](#installation)  ✦  [Usage](#usage)  ✦  [Contribution](#contribution)  ✦  [Tests](#tests)  ✦  [License](#license)  ✦  [Questions](#questions)
 
 ----------------------------------------------------------------
 ## About
-${renderAboutSectionFnc(data.about)} 
+${renderAboutSectionFnc(data.description)} 
 
 ## Installation
 ${renderInstallationSectionFnc(data.installation)} 
