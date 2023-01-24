@@ -28,6 +28,8 @@ Once fully installed, this program is invoked with the following command:
 ```bash
 node index.js
 ```
+Once the application successfully created the README file, the file will be stored in the Develop folder.
+
 To see this program in opperation, watch our live demo!
 
 FIXME: Create and attach video walk through!
