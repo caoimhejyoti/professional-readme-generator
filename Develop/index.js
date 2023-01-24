@@ -49,7 +49,7 @@ const questions = [
     //DESCRIPTION: Generates README liscense badge
     {name: "license",
     type: "list",
-    message: "Select your lisence type?",
+    message: "Select your license type?",
     choices: [
         'Apache license 2.0',
         'BSD 2-clause "Simplified" license',
